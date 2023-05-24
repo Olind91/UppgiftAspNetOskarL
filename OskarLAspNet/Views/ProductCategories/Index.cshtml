@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ProductCategory>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+    @foreach(var category in Model){
+        <div>
+            @category.CategoryName
+        </div>
+    }

@@ -1,0 +1,58 @@
+﻿@model ContactFormVM
+@{
+    ViewData["Title"] = "Contact us!";
+}
+
+<section class="contact-form">
+    <div class="container">
+        <form method="post" asp-controller="Contacts" asp-action="SubmitContactForm" novalidate>
+            <div asp-validation-summary="ModelOnly" class="form-group error"></div>
+
+            <div class="name form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" onkeyup="validateText(event)"/>
+                <span asp-validation-for="Name" class="error"></span>
+            </div>
+
+            <div class="email form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" onkeyup="validateEmail(event)" />
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+
+            <div class="phoneNumber form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" />
+                <span asp-validation-for="PhoneNumber" class="error"></span>
+            </div>
+
+            <div class="companyName form-group">
+                <label asp-for="Company"></label>
+                <input asp-for="Company" />
+                <span asp-validation-for="Company" class="error"></span>
+            </div>
+
+            <div class="message form-group">
+                <label asp-for="Comment"></label>
+                <textarea id="Comment" asp-for="Comment" onkeyup="validateComment(event)"></textarea>
+                <span asp-validation-for="Comment" class="error"></span>
+            </div>
+
+            <div class="terms form-checkbox-group">
+                <label class="custom-checkbox">
+                    <label asp-for="SaveMyData"></label>
+                    <input asp-for="SaveMyData" />
+                    <span class="checkmark"></span>
+                </label>
+                <span asp-validation-for="SaveMyData" class="error"></span>
+            </div>
+
+            <button class="btn-theme">Submit</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+
