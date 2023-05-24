@@ -1,0 +1,133 @@
+@import '../core/fonts';
+@import '../core/colors';
+@import '../core/mixins';
+
+
+.productimage-info {
+    
+}
+
+.productimage-info .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.left-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+
+.big-box {
+    background-color: #f2f2f2;
+    width: 501px;
+    height: 430px;
+    margin-bottom: 10px;
+    overflow:hidden;
+}
+
+.bix-box img {
+    max-width:100%;
+    max-height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+}
+
+.small-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.small-box {
+    background-color: #f9f9f9;
+    width: 100px;
+    height: 100px;
+}
+
+.increment-value {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+}
+
+.circles{
+    display:flex;
+}
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color:black;
+    margin-right:10px;
+    margin-bottom:30px;
+    
+}
+.circle-red{
+    background-color:red;
+}
+.circle-yellow {
+    background-color: darkgoldenrod;
+}
+
+.circle-green {
+    background-color: green;
+}
+
+
+.details-info .Articlenumber {
+    font-size: 12px;
+    color: lightgray;
+}
+
+
+.four-buttons-info .container {
+    display: block;
+    margin-bottom: 3rem;
+}
+
+ .four-buttons-info .container .info {
+    margin-bottom: 20px;
+}
+
+.four-buttons-info .container .btn {
+    background-color: red;
+    padding: 10px 30px 10px 30px;
+    margin: 4rem;
+    border: 1px solid $color-theme-1;
+    background-color: $color-theme-1;
+    color: $color-white;
+}
+
+.product-text-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-text-image {
+    display: flex;
+    align-items: center;
+}
+
+.image-placerholder {
+    width: 469px;
+    height: 356px;
+    background-color: rgb(196, 196, 196);
+}
+
+.four-buttons-info .container .text-info {
+    width: 40%;
+    line-height: 1.5;
+}

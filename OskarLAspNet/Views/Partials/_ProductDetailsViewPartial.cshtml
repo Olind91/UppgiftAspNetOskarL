@@ -1,0 +1,145 @@
+﻿@model ProductDetailViewModel
+
+<partial name="/Views/Partials/_BreadCrumbPartial.cshtml" />
+
+
+<section class="productimage-info">
+    <div class="container">
+
+
+        <div class="left-boxes">
+            <div class="big-box">
+                @if (string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="~/images/placeholders/placeholder.png" alt="Placeholder Image" height="430" width="501" />
+                }
+                else
+                {
+                    <img src="~/images/products/@Model.ImageUrl" alt="@Model.Name" height="430" width="501" />
+                }
+            </div>
+            <div class="small-boxes">
+                <div class="small-box"></div>
+                <div class="small-box"></div>
+                <div class="small-box"></div>
+                <div class="small-box"></div>
+            </div>
+        </div>
+
+        <div class="details-info">
+
+            <h3 class="title">@Model.Name</h3>
+            <div class="description info">@Model.Description</div>
+            <hr />
+            <div class="rating info"><i class="fa fa-star" aria-hidden="true"></i></div>
+            <div class="price info">Price :@Model.Price $</div>
+            <div class="increment-value info">
+                <button class="decrement">-</button>
+                <input type="text" class="quantity-input" value="1">
+                <button class="increment">+</button>
+                <span><button class="btn btn-theme">Add to Cart</button></span>
+            </div>
+
+
+            <div class="circles info">                
+                <div class="circle circle-red"></div>
+                <div class="circle circle-yellow"></div>
+                <div class="circle circle-green"></div>                
+                <span>SKU:N/A</span>
+            </div>
+
+            <button class="btn-outline-white info mb-2">Add to wishlist</button>
+            <div class="Articlenumber">Articlenumber: @Model.ArticleNumber</div>
+
+        </div>
+
+
+
+    </div>
+</section>
+
+    <div class="four-buttons-info">
+        <div class="container">
+            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-secondary">DESCRIPTION</button>
+                    <button type="button" class="btn btn-secondary">ADDITIONAL INFO</button>
+                    <button type="button" class="btn btn-secondary">REVIEWS (0)</button>
+                    <button type="button" class="btn btn-secondary">SHIPPING AND DELIVERY</button>
+                </div>
+            </div>
+
+            <div class="fake-info">
+                <h3 class="ingress">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</h3>
+            </div>
+
+            <div class="product-text-image">
+                <div class="text-info">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.
+                </div>
+                <div class="image-placerholder">469x356</div>
+            </div>
+            <hr class="mt-5">
+        </div>
+    </div>
+
+    <section class="top-selling">
+        <div class="container">
+            <h1 class="collection-title">Related Products</h1>
+            <div class="collection-grid">
+
+                <!-- collection-item start -->
+                <a href="#" class="collection-item">
+                    <img src="images/placeholders/270x295.svg" alt="">
+                    <div class="body">
+                        <div class="title">Apple watch collection</div>
+                        <div class="info">
+                            <div class="price">$30.00</div>
+                            <i class="add-cart fa-regular fa-cart-plus"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- collection-item end -->
+                <!-- collection-item start -->
+                <a href="#" class="collection-item">
+                    <img src="~images/placeholders/270x295.svg" alt="">
+                    <div class="body">
+                        <div class="title">Apple watch collection</div>
+                        <div class="info">
+                            <div class="price">$30.00</div>
+                            <i class="add-cart fa-regular fa-cart-plus"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- collection-item end -->
+                <!-- collection-item start -->
+                <a href="#" class="collection-item">
+                    <img src="images/placeholders/270x295.svg" alt="">
+                    <div class="body">
+                        <div class="title">Apple watch collection</div>
+                        <div class="info">
+                            <div class="price">$30.00</div>
+                            <i class="add-cart fa-regular fa-cart-plus"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- collection-item end -->
+                <!-- collection-item start -->
+                <a href="#" class="collection-item">
+                    <img src="images/placeholders/270x295.svg" alt="">
+                    <div class="body">
+                        <div class="title">Apple watch collection</div>
+                        <div class="info">
+                            <div class="price">$30.00</div>
+                            <i class="add-cart fa-regular fa-cart-plus"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- collection-item end -->
+
+
+            </div>
+
+        </div>
+    </section>
