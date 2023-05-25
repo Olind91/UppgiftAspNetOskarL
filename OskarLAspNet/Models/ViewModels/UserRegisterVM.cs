@@ -67,7 +67,7 @@ namespace OskarLAspNet.Models.ViewModels
         public IFormFile? ImageFile { get; set; }
 
         [Display(Name = "I have read and accept the terms and agreements")]
-        [Required(ErrorMessage = "You must agree with the terms and conditions")]
+        
         public bool TermsAndAgreement { get; set; } = false!;
 
 

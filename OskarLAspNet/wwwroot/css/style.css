@@ -84,6 +84,12 @@ html, body {
   width: 50%;
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
 .btn-toggle {
   font-family: "Poppins", sans-serif;
   font-size: 1.8em;
@@ -744,12 +750,20 @@ footer {
 }
 .up-to-sell .collection-grid .item-1 {
   grid-area: item-1;
+  height: 310px;
+  width: 369px;
 }
 .up-to-sell .collection-grid .discover {
   grid-area: content;
 }
 .up-to-sell .collection-grid .item-2 {
   grid-area: item-2;
+  height: 310px;
+  width: 369px;
+}
+.up-to-sell .collection-grid .item-1 img, .up-to-sell .collection-grid .item-2 img {
+  height: 310px;
+  width: 369px;
 }
 .up-to-sell .collection-grid .collection-content {
   display: flex;
@@ -827,9 +841,10 @@ footer {
 }
 .top-selling .collection-grid {
   margin-top: 40px;
+  margin-left: 20px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 40px;
+  gap: 10px;
 }
 @media (min-width: 768px) {
   .top-selling .collection-grid {

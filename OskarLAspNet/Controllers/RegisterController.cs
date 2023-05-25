@@ -25,6 +25,11 @@ namespace OskarLAspNet.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(UserRegisterVM viewModel)
         {
+            if (!viewModel.TermsAndAgreement)
+            {
+                ModelState.AddModelError("TermsAndAgreement", "You must agree with the terms and conditions");
+            }
+
             if (ModelState.IsValid)
             {
                 //Kollar om user finns, true/false

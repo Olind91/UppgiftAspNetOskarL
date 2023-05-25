@@ -17,14 +17,29 @@ namespace OskarLAspNet.Controllers
 
 
         //TEST
-        public IActionResult Index()
+       /* public IActionResult Index()
         {
             //Ändra nummer beroende på Tag. t.ex. 1 = new. 2 = featured. 3 = popular
             var products = _productService.GetProductsByTagId(1);
 
             return View(products);
+        }*/
+
+
+
+        //TEST
+        public IActionResult Index()
+        {
+            var model = new ProductsVM();
+            // Filter products for the first section (e.g., tag ID = 1)
+            model.NewProducts = _productService.GetProductsByTagId(1);
+
+            // Filter products for the second section (e.g., tag ID = 2)
+            model.FeaturedProducts = _productService.GetProductsByTagId(2);
+
+            model.PopularProducts = _productService.GetProductsByTagId(3);
+
+            return View(model);
         }
-
-
     }
 }

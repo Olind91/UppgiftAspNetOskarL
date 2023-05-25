@@ -27,6 +27,8 @@ namespace OskarLAspNet.Controllers
             _authService = authService;
         }
 
+        #region Success messages when creating tags or categorys
+        //Skickar meddelande om att t.ex. ny tag eller kategori har skapats vid redirect
         [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
@@ -36,8 +38,9 @@ namespace OskarLAspNet.Controllers
             }
             return View();
         }
+        #endregion
 
-
+        #region Get all users for the admin
         [Authorize(Roles = "admin")]
         public IActionResult GetAllUsers()
         {
@@ -45,7 +48,9 @@ namespace OskarLAspNet.Controllers
             return View(userList);
             
         }
+        #endregion
 
+        #region Show all products on adminpage
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> AdminProducts()
         {
@@ -54,7 +59,9 @@ namespace OskarLAspNet.Controllers
             return View(products);
 
         }
+        #endregion
 
+        #region Show registered comments as admin
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> ShowAllComments()
         {
@@ -63,9 +70,10 @@ namespace OskarLAspNet.Controllers
             return View(comments);
 
         }
+        #endregion
 
 
-        //TEST
+        #region Create user as admin
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> CreateUser(UserRegisterVM viewModel)
         {
@@ -84,34 +92,36 @@ namespace OskarLAspNet.Controllers
             ModelState.Clear();
             return View(viewModel);
         }
+        #endregion
 
 
 
 
-
-        //TEST
+        #region Change user-roles as admin
+        //BYTA ROLLER PÅ USERS
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> ChangeUserRole(string userId, string newRole)
         {
-            // Retrieve the user based on the provided userId
+            //Hämtar user via ID
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                // User not found, handle accordingly
+                
                 return RedirectToAction("GetAllUsers");
             }
 
-            // Retrieve the current roles of the user
+            //Hämtar role
             var currentRoles = await _userManager.GetRolesAsync(user);
 
-            // Remove the current roles
+            //Tar bort
             await _userManager.RemoveFromRolesAsync(user, currentRoles);
 
-            // Assign the new role
+            // Sätt ny role
             await _userManager.AddToRoleAsync(user, newRole);
 
             return RedirectToAction("GetAllUsers");
         }
+        #endregion
 
     }
 }
