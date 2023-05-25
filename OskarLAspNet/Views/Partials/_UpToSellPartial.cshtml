@@ -10,6 +10,7 @@
                 <div class="item-1">
                     <!-- collection-item start -->
                     <a href="@link" class="collection-item">
+                                                                    <!-- Tar första elementet -->
                         @if (!string.IsNullOrEmpty(Model.PopularProducts.ElementAtOrDefault(0)?.ImageUrl))
                         {
                             <img src="~/images/products/@Model.PopularProducts.ElementAtOrDefault(0)?.ImageUrl" alt="picture N/A">
@@ -19,7 +20,7 @@
                             <img src="~/images/placeholders/369x310.svg" alt="">
                         }
                         <div class="body">
-                            <div class="title">@Model.PopularProducts.ElementAtOrDefault(0)?.ProductName</div>
+                            <div class="title">@Model.PopularProducts.ElementAtOrDefault(0)?.ProductName</div> 
                             <div class="info">
                                 <div class="price">@Model.PopularProducts.ElementAtOrDefault(0)?.Price$</div>
                                 <i class="add-cart fa-regular fa-cart-plus"></i>
@@ -44,8 +45,8 @@
                 <!-- collection-content end -->
             @if (Model.PopularProducts.Any())
             {
-
-                var product = Model.PopularProducts.ElementAtOrDefault(1);
+                                                <!-- Tar andra elementet -->
+                var product = Model.PopularProducts.ElementAtOrDefault(1); 
                 var link = $"products/{product?.ArticleNumber}";
                 <div class="item-2">
                     <!-- collection-item start -->
@@ -69,8 +70,7 @@
                     <!-- collection-item end -->
                 </div>
             }
-
-            
+        
         </div>
     </div>
 </section>

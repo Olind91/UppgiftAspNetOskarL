@@ -1,18 +1,12 @@
 ﻿@model ProductsVM
 
-
-
 <section class="top-selling">
     <div class="container-fluid">
-        <h1 class="collection-title">Top selling products in this week</h1>
-        
-        <div class=" collection-grid">
+        <h1 class="collection-title">Top selling products in this week</h1>        
        
+        <div class=" collection-grid">       
             @foreach (var featuredProduct in Model.FeaturedProducts)
             {
-
-
-
                 var link = $"products/{featuredProduct.ArticleNumber}";
                 <div class="collection-grid">
 
@@ -36,8 +30,6 @@
                                 <i class="add-cart fa-regular fa-cart-plus"></i>
                             </div>
                             <div class="price">@featuredProduct.Price$</div>
-
-
                         </div>
                     </a>
                 </div>

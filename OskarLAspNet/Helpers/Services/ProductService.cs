@@ -38,48 +38,6 @@ namespace OskarLAspNet.Helpers.Services
             return null!;
         }
 
-        
-
-        //TEST - BEHÖVS INTE ENS!?
-        public async Task<Product> CreateProductAsync(ProductRegVM viewModel)
-        {
-            ProductEntity entity = viewModel;
-
-
-
-                if (int.TryParse(viewModel.SelectedCategory, out int parsedCategoryId))
-                {
-                    await _productCategoryService.AssociateProductWithCategoryAsync(entity, parsedCategoryId);
-                }
-                else
-                {
-                    // Handle the case where the categoryId is not a valid integer
-                    // You can choose to log an error, skip the category, or throw an exception
-                }
-
-
-            // Create the product
-            entity = await _productRepo.AddAsync(entity);
-
-            if (entity != null)
-            {
-                // Add tags to the product (if applicable)
-                foreach (var tagName in viewModel.Tags)
-                {
-                    var tag = await _tagService.GetTagAsync(tagName);
-                    tag ??= await _tagService.CreateTagAsync(tagName);
-
-                    await _productTagRepo.AddAsync(new ProductTagEntity
-                    {
-                        ArticleNumber = entity.ArticleNumber,
-                        TagId = tag.Id,
-                    });
-                }
-
-                return await GetProductAsync(entity.ArticleNumber);
-            }
-            return null!;
-        }
         #endregion
 
 
@@ -89,7 +47,7 @@ namespace OskarLAspNet.Helpers.Services
             return await _productRepo.GetAllAsync();
         }
 
-
+        //Ej använd
         #region Get
         public async Task<Product> GetProductAsync(string articleNumber)
         {
@@ -117,6 +75,7 @@ namespace OskarLAspNet.Helpers.Services
         }
         #endregion
 
+        //Ej använd
         public async Task<Product> UpdateProductAsync(Product product)
         {
             //Hämtar tag via ID, om tag id finns, uppdaterar.

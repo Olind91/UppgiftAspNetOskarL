@@ -16,14 +16,14 @@ namespace OskarLAspNet.Helpers.Services
         }
 
         #region Create
-        public async Task<ProductCategory> CreateProductCategoryAsync(string categoryName)
+        /*public async Task<ProductCategory> CreateProductCategoryAsync(string categoryName)
         {
             var entity = new ProductCategoryEntity { CategoryName = categoryName };
             var result = await _productCategoryRepo.AddAsync(entity);
 
             return result;
 
-        }
+        }*/
 
         public async Task<ProductCategory> CreateProductCategoryAsync(CategoryRegVM viewModel)
         {
@@ -93,6 +93,6 @@ namespace OskarLAspNet.Helpers.Services
 
 
 
-        //lägg till update + delete, ta från tagservice.
+        
     }
 }

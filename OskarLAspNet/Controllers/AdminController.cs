@@ -85,7 +85,7 @@ namespace OskarLAspNet.Controllers
 
                 //registrerar och omdirigerar
                 if (await _authService.RegisterUserAsync(viewModel))
-                    return RedirectToAction("index", "login");
+                    return RedirectToAction("");
 
 
             }
