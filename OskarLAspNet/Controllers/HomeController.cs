@@ -16,9 +16,6 @@ namespace OskarLAspNet.Controllers
        
 
 
-      
-
-
         //SKAPA New / Featured / Popular Tag. Går sedan efter vilken tag produkt har och lägger upp på olika delar av förstasidan
         public IActionResult Index()
         {
@@ -32,6 +29,7 @@ namespace OskarLAspNet.Controllers
 
             //Popular
             model.PopularProducts = _productService.GetProductsByTagId(3);
+
 
             return View(model);
         }
