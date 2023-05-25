@@ -55,11 +55,19 @@
 .increment-value {
     display: flex;
     align-items: center;
+    width:50%;
+    
 }
 
 .quantity-input {
     width: 50px;
     text-align: center;
+}
+
+.details-info .btn-theme {
+    margin-left: 20px;
+    padding: 0px 35px;
+    width:100%;
 }
 
 .circles{

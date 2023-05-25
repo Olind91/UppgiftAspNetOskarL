@@ -1,6 +1,13 @@
 ﻿@model ProductDetailViewModel
 
-<partial name="/Views/Partials/_BreadCrumbPartial.cshtml" />
+<section class="breadcrumb">
+    <div class="container">
+        <div class="content">
+            <h1>SHOP</h1>
+            <div class="text-align-center">HOME PRODUCT DETAILS</div>
+        </div>
+    </div>
+</section>
 
 
 <section class="productimage-info">
@@ -37,7 +44,7 @@
                 <button class="decrement">-</button>
                 <input type="text" class="quantity-input" value="1">
                 <button class="increment">+</button>
-                <span><button class="btn btn-theme">Add to Cart</button></span>
+                <span><button class="btn-theme">Add to Cart</button></span>
             </div>
 
 
@@ -89,54 +96,11 @@
             <h1 class="collection-title">Related Products</h1>
             <div class="collection-grid">
 
-                <!-- collection-item start -->
-                <a href="#" class="collection-item">
-                    <img src="images/placeholders/270x295.svg" alt="">
-                    <div class="body">
-                        <div class="title">Apple watch collection</div>
-                        <div class="info">
-                            <div class="price">$30.00</div>
-                            <i class="add-cart fa-regular fa-cart-plus"></i>
-                        </div>
-                    </div>
-                </a>
-                <!-- collection-item end -->
-                <!-- collection-item start -->
-                <a href="#" class="collection-item">
-                    <img src="~images/placeholders/270x295.svg" alt="">
-                    <div class="body">
-                        <div class="title">Apple watch collection</div>
-                        <div class="info">
-                            <div class="price">$30.00</div>
-                            <i class="add-cart fa-regular fa-cart-plus"></i>
-                        </div>
-                    </div>
-                </a>
-                <!-- collection-item end -->
-                <!-- collection-item start -->
-                <a href="#" class="collection-item">
-                    <img src="images/placeholders/270x295.svg" alt="">
-                    <div class="body">
-                        <div class="title">Apple watch collection</div>
-                        <div class="info">
-                            <div class="price">$30.00</div>
-                            <i class="add-cart fa-regular fa-cart-plus"></i>
-                        </div>
-                    </div>
-                </a>
-                <!-- collection-item end -->
-                <!-- collection-item start -->
-                <a href="#" class="collection-item">
-                    <img src="images/placeholders/270x295.svg" alt="">
-                    <div class="body">
-                        <div class="title">Apple watch collection</div>
-                        <div class="info">
-                            <div class="price">$30.00</div>
-                            <i class="add-cart fa-regular fa-cart-plus"></i>
-                        </div>
-                    </div>
-                </a>
-                <!-- collection-item end -->
+             <!-- collection-item start -->
+            <partial name="/Views/Partials/_PlaceHolderCardsPartial.cshtml" />
+            <partial name="/Views/Partials/_PlaceHolderCardsPartial.cshtml" />
+            <partial name="/Views/Partials/_PlaceHolderCardsPartial.cshtml" />
+            <partial name="/Views/Partials/_PlaceHolderCardsPartial.cshtml" />
 
 
             </div>
