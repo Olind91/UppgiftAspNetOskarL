@@ -47,48 +47,7 @@ namespace OskarLAspNet.Helpers.Services
             return await _productRepo.GetAllAsync();
         }
 
-        //Ej använd
-        #region Get
-        public async Task<Product> GetProductAsync(string articleNumber)
-        {
-            var entity = await _productRepo.GetAsync(x => x.ArticleNumber == articleNumber);
-            if (entity != null)
-            {
-                Product product = entity;
-
-                //2:56:00 f.10
-                if (entity.ProductTags.Count > 0)
-                {
-                    var tagList = new List<Tag>();
-
-                    foreach (var productTag in entity.ProductTags)
-                        tagList.Add(new Tag { Id = productTag.Tag.Id, TagName = productTag.Tag.TagName });
-
-                    product.Tags = tagList;
-                }
-
-                return product;
-            }
-
-            return null!;
-
-        }
-        #endregion
-
-        //Ej använd
-        public async Task<Product> UpdateProductAsync(Product product)
-        {
-            //Hämtar tag via ID, om tag id finns, uppdaterar.
-            var entity = await _productRepo.GetAsync(x => x.ProductName == product.ProductName);
-            if (entity != null)
-            {
-                product.ProductName = product.ProductName;
-                var result = await _productRepo.UpdateAsync(entity);
-                return result;
-            }
-
-            return null!;
-        }
+                       
 
 
         public async Task<bool> UploadImageAsync(Product product, IFormFile image)
@@ -102,7 +61,7 @@ namespace OskarLAspNet.Helpers.Services
             catch { return false; }
         }
 
-        //TEST
+        
         public IEnumerable<Product> GetProductsByTagId(int tagId)
         {
             var products = _productRepo.GetProductsByTagId(tagId);

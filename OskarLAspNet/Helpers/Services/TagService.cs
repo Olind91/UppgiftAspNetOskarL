@@ -18,19 +18,8 @@ namespace OskarLAspNet.Helpers.Services
         }
 
 
-        #region Create
-        public async Task<Tag> CreateTagAsync(string tagName)
-        {
-            var entity = new TagEntity { TagName = tagName };
-            var result = await _tagRepo.AddAsync(entity);
-
-            return result;
-        }
-
-        //TEST
-       
-
-        //Runt 1 timme in i föreläsning 10
+        #region Create        
+        
         public async Task<Tag> CreateTagAsync(TagRegVM viewModel)
         {
 
@@ -48,10 +37,6 @@ namespace OskarLAspNet.Helpers.Services
 
 
          }
-
-
-
-
         #endregion
 
 
@@ -67,57 +52,8 @@ namespace OskarLAspNet.Helpers.Services
 
             return list;
         }
-        #endregion
-
-        #region Update
-        public async Task<Tag> UpdateTagAsync(Tag tag)
-        {
-            //Hämtar tag via ID, om tag id finns, uppdaterar.
-            var entity = await _tagRepo.GetAsync(x => x.Id == tag.Id);
-            if (entity != null)
-            {
-                entity.TagName = tag.TagName;
-                var result = await _tagRepo.UpdateAsync(entity);
-                return result;
-            }
-
-            return null!;
-        }
-        #endregion
-
-        #region Delete
-        //1:10:00 Föreläsning 10.
-        //Olika kriterier för att kunna delete
-
-        //Efter ID
-        public async Task<bool> DeleteTagAsync(int id)
-        {
-
-            var entity = await _tagRepo.GetAsync(x => x.Id == id);
-            return await _tagRepo.DeleteAsync(entity);
-        }
-
-        //Efter Namn
-        public async Task<bool> DeleteTagAsync(string tagName)
-        {
-
-            var entity = await _tagRepo.GetAsync(x => x.TagName == tagName);
-            return await _tagRepo.DeleteAsync(entity);
-        }
-
-        //Hel Tag
-        public async Task<bool> DeleteTagAsync(Tag tag)
-        {
-
-            var entity = await _tagRepo.GetAsync(x => x.Id == tag.Id);
-            return await _tagRepo.DeleteAsync(entity);
-        }
-
-        #endregion
-
-
-
-        //TEST
+        #endregion      
+         
         public async Task<List<SelectListItem>> GetTagsAsync()
         {
             var tags = new List<SelectListItem>();

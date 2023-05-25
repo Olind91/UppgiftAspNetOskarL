@@ -16,14 +16,7 @@ namespace OskarLAspNet.Helpers.Services
         }
 
         #region Create
-        /*public async Task<ProductCategory> CreateProductCategoryAsync(string categoryName)
-        {
-            var entity = new ProductCategoryEntity { CategoryName = categoryName };
-            var result = await _productCategoryRepo.AddAsync(entity);
-
-            return result;
-
-        }*/
+        
 
         public async Task<ProductCategory> CreateProductCategoryAsync(CategoryRegVM viewModel)
         {
@@ -40,14 +33,7 @@ namespace OskarLAspNet.Helpers.Services
             return result;
         }
 
-        public async Task<ProductCategory> GetCategoryAsync(int id)
-        {
-            var result = await _productCategoryRepo.GetAsync(x => x.Id == id);
-            return result;
-
-
-            //1:40:50 f.10. lägger till get med schema också.
-        }
+       
         #endregion
 
 
@@ -81,14 +67,7 @@ namespace OskarLAspNet.Helpers.Services
         }
 
 
-        public async Task AssociateProductWithCategoryAsync(ProductEntity product, int categoryId)
-        {
-            var category = await _productCategoryRepo.GetAsync(categoryId);
-            if (category != null)
-            {
-                product.ProductCategory = category;
-            }
-        }
+        
 
 
 
