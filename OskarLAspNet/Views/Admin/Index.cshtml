@@ -3,7 +3,7 @@
 <section class="admin-section">
 <div class="jumbotron">
     <div class="container">
-    <h3 class="display-4">Welcome @User.Identity.Name! This is your admin dashboard.</h3>
+    <h3 class="display-4 mt-4">Welcome @User.Identity.Name! This is your admin dashboard.</h3>
 
         <!-- Visar success-meddelande vid skapande av ny tag eller kategory -->
         @if (ViewBag.SuccessMessage != null)
@@ -13,8 +13,8 @@
 
     <p class="lead" mt-4>Let's get started!</p>
     <hr class="my-4">
-    <p>You can do lots of stuff here! I would recommend starting with creating a tag or two and then some categories perhaps! You can select 
-        what tag you want to show on the Homepage by changing ID in the HomeController.
+    <p>You can do lots of stuff here! I would recommend starting with creating a tag or three and then some categories perhaps! You can select
+                what tag you want to show on the Homepage by changing ID in the HomeController.<b> I would recommend creating tags in the order of New / Featured / Popular as it is the standard behaviour for the website.</b>
     </p>
     <p class="lead">
         <div class="admin-buttons">
